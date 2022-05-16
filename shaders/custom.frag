@@ -11,5 +11,11 @@ uniform sampler2D image;
 out vec4 FragColor;
 
 void main() {
-    FragColor = texture(image, texcoord);
+    vec4 t = texture(image, texcoord);
+
+    //inverted colors
+    t.r = (1.0-t.r);
+    t.g = (1.0-t.g);
+    t.b = (1.0-t.b);
+    FragColor = t;
 }
